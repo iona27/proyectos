@@ -45,4 +45,15 @@ class UsuariosModel {
             return $e->getMessage();
         }
     }
+    public static function new($param){
+       try{
+            UsuariosModel::conexionDB();
+            $sql = "insert into usuarios (usuarioid, nombre, apellidos, direccion, ciudad, anioNac) 
+                    values (?, ?, ?, ?, ?, ?)";
+            $data = UsuariosModel::$DB->run($sql, $param);
+            return "Usuario ". $param[1] . " insertado correctamente ";
+       } catch(Exception $e){
+          return $e->getMessage();
+       }
+    }
 }
