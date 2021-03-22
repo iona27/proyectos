@@ -10,7 +10,7 @@ class CategoriasModel {
 
 
     public static function conexionDB(){
-        LibrosModel::$DB = new DB();
+        CategoriasModel::$DB = new DB();
     }
 
     public static function getAll(){
