@@ -14,7 +14,9 @@
         }
        
         public function getAll($request, $response, $args){
-            $response->getBody()->write("Listado de Categorías");
+            $categorias = CategoriasModel::getALL();
+            $categoriasJson = json_encode($categorias);
+            $response->getBody()->write($categoriasJson);
             return $response
                 ->withHeader('Content-Type', 'application/json')
                 ->withStatus(200);
