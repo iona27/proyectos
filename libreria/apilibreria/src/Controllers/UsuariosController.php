@@ -7,43 +7,41 @@
     
         public function new(Request  $request, Response $response, $args){
             $parametros = $request->getParsedBody();
-            
-            $id = (int)$parametros['id'];
+           
+            $uid = (int)$parametros['usuarioid'];
             $nombre = $parametros['nombre'];
             $apellidos = $parametros['apellidos'];
             $direccion = $parametros['direccion'];
+            $anionac = (int)$parametros['anioNac'];
             $ciudad = $parametros['ciudad'];
-            $nac = (int)$parametros['nacimiento'];
-            
-            $param = array($id,$nombre,$apellidos,$direccion,$ciudad,$nac);
-            $usuario = UsuariosModel::new($param);
-            $usuarioJson = json_encode($usuario);
-            $response->getBody()->write($usuarioJson);
+            $valores = array($uid, $nombre, $apellidos, $direccion, $ciudad, $anionac);
+            $usuarios = UsuariosModel::new($valores);
+            $usuariosJson = json_encode($usuarios);
+            $response->getBody()->write($usuariosJson);
             return $response
                 ->withHeader('Content-Type', 'application/json')
                 ->withStatus(200);
         }
+
+        public function delete(Request $request, Response $response, $args) {
+            $parametros = $request->getQueryParams();
+            $id = (int)$parametros['usuarioid'];
+          
+            $valoresParametros = array ($id);
+            $usuarios = UsuariosModel::delete($valoresParametros);
+            $usuariosJson = json_encode($usuarios);
+            $response->getBody()->write($usuariosJson);
+            return $response
+                ->withHeader('Content-Type', 'application/json')
+                ->withStatus(200); 
+          }
        
         public function getAll($request, $response, $args){
-            $usuario = UsuariosModel::getAll();
-            $usuarioJson = json_encode($usuario);
-            $response->getBody()->write($usuarioJson);
+            $usuarios = UsuariosModel::getAll();
+            $usuariosJson = json_encode($usuarios);
+            $response->getBody()->write($usuariosJson);
             return $response
                 ->withHeader('Content-Type', 'application/json')
                 ->withStatus(200);
-        }
-
-        public function drop(Request  $request, Response $response, $args){
-            $parametros = $request->getQueryParams();
-
-            $id = (int)$parametros['id'];
-
-            $param = array($id);
-            $usuario = UsuariosModel::drop($param);
-            $usuarioJson = json_encode($usuario);
-            $response->getBody()->write($usuarioJson);
-            return $response
-                ->withHeader('Content-Type', 'application/json')
-                ->withStatus(200);
-        }
+            }
     }

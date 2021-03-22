@@ -12,22 +12,13 @@ class UsuariosModel {
         UsuariosModel::$DB = new DB();
     }
 
-    public static function new($param){
-       // print_r(array_keys($param));
-       try{
-            //$values = array_values($param);
-            UsuariosModel::conexionDB();
-            $sql = "insert into usuarios (usuarioid, nombre, apellidos, direccion, ciudad, anioNac) 
-                    values (?, ?, ?, ?, ?, ?)";
-            $data = UsuariosModel::$DB->run($sql, $param);
-            return "Usuario ". $param[1] . " insertado correctamente ";
-       } catch(Exception $e){
-          return $e->getMessage();
-       }
-        
-    //    return $data->fetch();
-
+    public static function delete($param){
+             UsuariosModel::conexionDB();
+             $sql = "DELETE FROM usuarios WHERE usuarioid = ?";
+             $data = UsuariosModel::$DB->run($sql, $param);
+             return "Usuario ". $param[0] . " borrado correctamente ";
     }
+
     public static function getAll(){
         UsuariosModel::conexionDB();
         $sql = "Select * from usuarios";
@@ -35,16 +26,6 @@ class UsuariosModel {
         return $data->fetchAll();
     }
 
-    public static function drop($param){
-        try{
-            UsuariosModel::conexionDB();
-            $sql = "DELETE FROM usuarios where usuarioid = ?";
-            $data = UsuariosModel::$DB->run($sql, $param);
-            return "Usuario borrado correctamente";
-        }catch(Exception $e){
-            return $e->getMessage();
-        }
-    }
     public static function new($param){
        try{
             UsuariosModel::conexionDB();
