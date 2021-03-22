@@ -8,6 +8,13 @@ class LibrosModel {
     private static $table = 'libros';
     private static $DB;
 
+      public static function getLibrosYCategorias(){
+        LibrosModel::conexionDB();
+        $sql = "Select * from libros l inner join categorias c on l.categoriaid=c.categoriaid";
+        $data = LibrosModel::$DB->run($sql, []);
+        return $data->fetchAll();
+    }
+
     public static function conexionDB(){
         LibrosModel::$DB = new DB();
     }

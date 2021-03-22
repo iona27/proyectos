@@ -7,4 +7,6 @@ $app->group('/api', function(RouteCollectorProxy $group){
     $group->get('/libros', 'App\Controllers\LibrosController:getAll');
     $group->post('/libros/new', 'App\Controllers\LibrosController:new');   
     $group->get('/libros/filter', 'App\Controllers\LibrosController:getFilter');
+     $group->get('/libros/categorias', 'App\Controllers\LibrosController:getLibrosYCategorias');
+    
 });

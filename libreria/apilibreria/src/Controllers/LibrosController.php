@@ -6,6 +6,15 @@
     use App\Model\LibrosModel;    
 
     class LibrosController {
+
+         public function getLibrosYCategorias($request, $response, $args){
+            $libros = LibrosModel::getLibrosYCategorias();
+            $librosJson = json_encode($libros);
+            $response->getBody()->write($librosJson);
+            return $response
+                ->withHeader('Content-Type', 'application/json')
+                ->withStatus(200);
+        }
         
         public function getAll($request, $response, $args){
             $libros = LibrosModel::getAll();
