@@ -23,16 +23,13 @@
                 ->withStatus(200);
         }
 
-        public function getFilter(Request $request, Response $response, $args){
+        public function ionagetFilter(Request $request, Response $response, $args){
             $parametros = $request->getQueryParams();
 
             $precio = $parametros['precio'];
-            $editorial = $parametros['editorial'];
-
-            var_dump($precio);
-
-            $valoresParametros = array ($precio, $editorial);
-            $libros = LibrosModel::getFilter($valoresParametros);
+            $categoria = $parametros['categoriaid'];
+            $valoresParametros = array ($precio, $categoria);
+            $libros = ionaLibrosModel::ionagetFilter($valoresParametros);
             $librosJson = json_encode($libros);
             $response->getBody()->write($librosJson);
             return $response

@@ -4,12 +4,12 @@ use App\Config\DB;
 
 //definimos LibrosModel como una clase estática:
 //no se puede hacer un new, no hay $this, no hay método __contruct()
-class LibrosModel {
+class ionaLibrosModel {
     private static $table = 'libros';
     private static $DB;
 
     public static function conexionDB(){
-        LibrosModel::$DB = new DB();
+        ionaLibrosModel::$DB = new DB();
     }
    
 
@@ -20,5 +20,15 @@ class LibrosModel {
         $data = ionaLibrosModel::$DB->run($sql, []);
         return $data->fetchAll();
     }
+
+    
+    public static function ionagetFilter(){
+        
+        $sql = "Select * from  libros where precio > ? and categoriaid = ?";
+        ionaLibrosModel::conexionDB();
+        $data = ionaLibrosModel::$DB->run($sql, []);
+        return $data->fetchAll();
+    }
+    
     
 }
