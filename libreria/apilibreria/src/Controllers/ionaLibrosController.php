@@ -3,12 +3,12 @@
     use Psr\Http\Message\ResponseInterface as Response;
     use Psr\Http\Message\ServerRequestInterface as Request;
     //use App\Controllers\BaseController;
-    use App\Model\LibrosModel;    
+    use App\Model\ionaLibrosModel;    
 
     class ionaLibrosController {
 
         public function getLibrosYCategorias($request, $response, $args){
-            $libros = LibrosModel::getLibrosYCategorias();
+            $libros = ionaLibrosModel::getLibrosYCategorias();
             $librosJson = json_encode($libros);
             $response->getBody()->write($librosJson);
             return $response
