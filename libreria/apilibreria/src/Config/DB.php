@@ -15,9 +15,10 @@ class DB {
         ";dbname=".config::DB_NAME.
         ";port=".config::DB_PORT.
         ";charset=".config::DB_CHARSET;
-        echo $dsn;
+        
         try{
             $this->pdo = new PDO($dsn, config::DB_USER, config::DB_PASS, $opciones);
+            var_dump($this->pdo);
         }catch( PDOException $Exception ) {
             // Note The Typecast To An Integer!
             throw new MyDatabaseException( $Exception->getMessage( ) , (int)$Exception->getCode( ) );
