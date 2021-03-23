@@ -17,11 +17,11 @@ class DB {
         ";charset=".config::DB_CHARSET;
         
         try{
-            $this->pdo = new PDO($dsn, config::DB_USER, config::DB_PASS, $opciones);
+       //     $this->pdo = new PDO($dsn, config::DB_USER, config::DB_PASS, $opciones);
             echo $dsn;
         }catch( PDOException $Exception ) {
             // Note The Typecast To An Integer!
-            throw new MyDatabaseException( $Exception->getMessage( ) , (int)$Exception->getCode( ) );
+     //       throw new MyDatabaseException( $Exception->getMessage( ) , (int)$Exception->getCode( ) );
         }
         
     }
