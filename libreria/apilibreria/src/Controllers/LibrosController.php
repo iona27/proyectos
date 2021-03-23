@@ -44,7 +44,7 @@
             
             $libros = LibrosModel::getAll();
             $librosJson = json_encode($libros);
-            $response->getBody()->write( $librosJson);
+            $response->getBody()->write($librosJson);
             return $response
                 ->withHeader('Content-Type', 'application/json')
                 ->withStatus(200);
