@@ -22,11 +22,11 @@ class ionaLibrosModel {
     }
 
     
-    public static function ionagetFilter(){
+    public static function ionagetFilter($param){
         
         $sql = "Select * from  libros where precio > ? and categoriaid = ?";
         ionaLibrosModel::conexionDB();
-        $data = ionaLibrosModel::$DB->run($sql, []);
+        $data = ionaLibrosModel::$DB->run($sql, $param);
         return $data->fetchAll();
     }
     
