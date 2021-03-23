@@ -5,7 +5,7 @@
     //use App\Controllers\BaseController;
     use App\Model\LibrosModel;    
 
-    class LibrosController {
+    class ionaLibrosController {
 
         public function getLibrosYCategorias($request, $response, $args){
             $libros = LibrosModel::getLibrosYCategorias();
@@ -40,7 +40,7 @@
                 ->withStatus(200); 
         }
         
-        public function getAll(Request $request, Response $response, $args){
+        public function ionagetAll(Request $request, Response $response, $args){
             
             $libros = LibrosModel::getAll();
             $librosJson = json_encode($libros);
