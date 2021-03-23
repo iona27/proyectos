@@ -18,7 +18,7 @@ class DB {
         
         try{
             $this->pdo = new PDO($dsn, config::DB_USER, config::DB_PASS, $opciones);
-            var_dump($this->pdo);
+            echo $dsn;
         }catch( PDOException $Exception ) {
             // Note The Typecast To An Integer!
             throw new MyDatabaseException( $Exception->getMessage( ) , (int)$Exception->getCode( ) );
