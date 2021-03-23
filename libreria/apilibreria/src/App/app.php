@@ -11,7 +11,7 @@ require __DIR__. '/../../vendor/autoload.php';
 // creamos la aplicación php
 $app = AppFactory::create();
 $app->setBasePath("/libreria/apilibreria/public/index.php");
-/*//FUNCION DE PRUEBA /index.php/hello
+//FUNCION DE PRUEBA /index.php/hello
 $app->get("/hello", function(Request $request, Response $response, $args) {
     $response->getBody()->write("Hello world!");
     return $response;
@@ -21,9 +21,9 @@ $app->get("/hello", function(Request $request, Response $response, $args) {
 //los entrypoints harán referencia a las acciones CRUD de una tabla de nuestra BD
 require __DIR__. "/../Routes/libros.php";
 //require __DIR__. "/../Routes/categorias.php";
-require __DIR__. "/../Routes/editores.php";
-require __DIR__. "/../Routes/usuarios.php";
-echo "app";
+//require __DIR__. "/../Routes/editores.php";
+//require __DIR__. "/../Routes/usuarios.php";
+
 $app->run();
 
 
