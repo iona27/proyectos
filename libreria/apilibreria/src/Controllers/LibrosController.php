@@ -41,6 +41,7 @@
         }
         
         public function getAll($request, $response, $args){
+            echo "hola";
             $libros = LibrosModel::getAll();
             $librosJson = json_encode($libros);
             $response->getBody()->write($librosJson);

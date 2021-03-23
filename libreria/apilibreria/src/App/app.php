@@ -23,7 +23,7 @@ require __DIR__. "/../Routes/libros.php";
 //require __DIR__. "/../Routes/categorias.php";
 require __DIR__. "/../Routes/editores.php";
 require __DIR__. "/../Routes/usuarios.php";
-
+echo "app";
 $app->run();
 
 
