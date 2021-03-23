@@ -7,9 +7,7 @@
 
     class ionaLibrosController {
 
-        public function getLibrosYCategorias($request, $response, $args){
-            $libros = ionaLibrosModel::getLibrosYCategorias();
-            $librosJson = json_encode($libros);
+        /*rosJson = json_encode($libros);
             $response->getBody()->write($librosJson);
             return $response
                 ->withHeader('Content-Type', 'application/json')
@@ -21,7 +19,7 @@
             return $response
                 ->withHeader('Content-Type', 'application/json')
                 ->withStatus(200);
-        }
+        }*/
 
         public function ionagetFilter(Request $request, Response $response, $args){
             $parametros = $request->getQueryParams();
