@@ -40,7 +40,7 @@
                 ->withStatus(200); 
         }
         
-        public function getAll($request, $response, $args){
+        public function getAll(Request $request, Response $response, $args){
             
             $libros = LibrosModel::getAll();
             $librosJson = json_encode($librosJson);
