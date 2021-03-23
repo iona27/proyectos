@@ -26,7 +26,6 @@ class DB {
         //En args meteremos variables del where de una consulta --> $args = [10, 56.7]
         if (!$args){
             $data = $this->pdo->query($sql);
-            var_dump($data);
             return $data;
         }
         //manda argumentos --> preparamos la sentencia
