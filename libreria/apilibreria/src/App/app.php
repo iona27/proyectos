@@ -15,7 +15,7 @@ $app->setBasePath("/libreria/apilibreria/public/index.php");
 $app->get("/hello", function(Request $request, Response $response, $args) {
     $response->getBody()->write("Hello world!");
     return $response;
-});*/
+});
  
 //Cargamos en memoria los archivos de rutas que contendrán los entrypoints a cada una de las tablas.
 //los entrypoints harán referencia a las acciones CRUD de una tabla de nuestra BD
