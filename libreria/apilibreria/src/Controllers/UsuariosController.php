@@ -7,7 +7,7 @@
 
         public function update(Request  $request, Response $response, $args){
             $parametros = $request->getParsedBody();
-
+           
             $uid = (int)$parametros['usuarioid'];
             $nombre = $parametros['nombre'];
             $apellidos = $parametros['apellidos'];
