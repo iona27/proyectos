@@ -5,7 +5,7 @@ use Slim\Routing\RouteCollectorProxy;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Http\Message\ResponseInterface as Response;*/
 
-//contendrá los entrypoints (acciones CRUD) de la tabla libros
+//contendrá los entrypoints (acciones CRUD) de la 
 $app->group('/api', function(RouteCollectorProxy $group){
     $group->get('/libros', 'App\Controllers\ionaLibrosController:ionagetAll');
     $group->post('/libros/new', 'App\Controllers\LibrosController:new'); 
