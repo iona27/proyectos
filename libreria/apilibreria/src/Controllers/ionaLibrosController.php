@@ -42,7 +42,7 @@
         
         public function ionagetAll(Request $request, Response $response, $args){
             
-            $libros = LibrosModel::getAll();
+            $libros = ionaLibrosModel::ionagetAll();
             $librosJson = json_encode($libros);
             $response->getBody()->write($librosJson);
             return $response

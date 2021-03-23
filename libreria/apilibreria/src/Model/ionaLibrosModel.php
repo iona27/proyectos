@@ -13,11 +13,11 @@ class LibrosModel {
     }
    
 
-    public static function getAll(){
+    public static function ionagetAll(){
         
         $sql = "Select * from libros";
-        LibrosModel::conexionDB();
-        $data = LibrosModel::$DB->run($sql, []);
+        ionaLibrosModel::conexionDB();
+        $data = ionaLibrosModel::$DB->run($sql, []);
         return $data->fetchAll();
     }
     
