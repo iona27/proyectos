@@ -43,7 +43,6 @@
         public function getAll($request, $response, $args){
             
             $libros = LibrosModel::getAll();
-            var_dump($libros);
             $librosJson = json_encode($librosJson);
             $response->getBody()->write($librosJson);
             return $response
