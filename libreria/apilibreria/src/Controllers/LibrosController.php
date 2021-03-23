@@ -42,9 +42,9 @@
         
         public function getAll($request, $response, $args){
             
-            $libros = LibrosModel::getAll();
-            var_dump($libros);
-            $librosJson = json_encode($libros);
+         //   $libros = LibrosModel::getAll();
+          //  var_dump($libros);
+          //  $librosJson = json_encode($libros);
             $response->getBody()->write("hola pepe");
             return $response
                 ->withHeader('Content-Type', 'application/json')
