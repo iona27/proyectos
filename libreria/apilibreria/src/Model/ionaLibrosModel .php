@@ -25,7 +25,7 @@ class ionaLibrosModel {
     }*/
 
     public static function ionagetAll(){
-        LibrosModel::conexionDB();
+        ionaLibrosModel::conexionDB();
         $sql = "Select * from libros";
         $data = ionaLibrosModel::$DB->run($sql, []);
         return $data->fetchAll();
