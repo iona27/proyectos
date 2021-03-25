@@ -13,12 +13,12 @@ $app = AppFactory::create();
 $app->setBasePath("/libreria/apilibreria/public/index.php");
 
 
-require __DIR__. "/../Routes/ionalibros.php";
-require __DIR__. "/../Routes/avcategorias.php";
-require __DIR__. "/../Routes/aveditores.php";
-require __DIR__. "/../Routes/avusuarios.php";
-require __DIR__. "/../Routes/avperfiles.php";
-require __DIR__. "/../Routes/avdetallepedidos.php";
+require __DIR__. "/../Routes/ionaLibros.php";
+require __DIR__. "/../Routes/ionaCategorias.php";
+require __DIR__. "/../Routes/ionaEditores.php";
+require __DIR__. "/../Routes/ionaUsuarios.php";
+require __DIR__. "/../Routes/ionaPerfiles.php";
+require __DIR__. "/../Routes/ionaDetallePedidos.php";
 
 $app->run();
 

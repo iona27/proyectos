@@ -5,7 +5,7 @@
     
     use App\Model\ionaLibrosModel;    
 
-    class ionaLibrosController {
+    class ionaLibrosController {/*
 
         public function avupdate(Request  $request, Response $response, $args){
             $parametros = $request->getQueryParams();
@@ -21,9 +21,9 @@
             return $response
                 ->withHeader('Content-Type', 'application/json')
                 ->withStatus(200);
-        }
+        }*/
 
-        public function avFilter(Request $request, Response $response, $args){
+        public function ionagetFilter(Request $request, Response $response, $args){
             $parametros = $request->getQueryParams();
 
             $precio = $parametros['precio'];
@@ -31,7 +31,7 @@
 
             $valoresParametros = array ($precio, $categoria);
 
-            $libros = avLibrosModel::avFilter($valoresParametros);
+            $libros = ionaLibrosModel::ionagetFilter($valoresParametros);
             $librosJson = json_encode($libros);
             $response->getBody()->write($librosJson);
             return $response

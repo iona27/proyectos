@@ -3,14 +3,14 @@
     use Psr\Http\Message\ResponseInterface as Response;
     use Psr\Http\Message\ServerRequestInterface as Request;
     
-    use App\Model\avCategoriasModel;    
+    use App\Model\ionaEditoresModel;    
 
-    class avCategoriasController {
+    class ionaEditoresController {
         
-        public function avAll($request, $response, $args){
-            $Categorias = avCategoriasModel::avAll();
-            $CategoriasJson = json_encode($Categorias);
-            $response->getBody()->write($CategoriasJson);
+        public function ionagetAll($request, $response, $args){
+            $Editores = ionaEditoresModel::ionagetAll();
+            $EditoresJson = json_encode($Editores);
+            $response->getBody()->write($EditoresJson);
             return $response
                 ->withHeader('Content-Type', 'application/json')
                 ->withStatus(200);

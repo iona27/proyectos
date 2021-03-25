@@ -2,18 +2,18 @@
 namespace App\Model;
 use App\Config\DB;
 
-class avCategoriasModel {
+class ionaCategoriasModel {
     private static $table = 'categorias';
     private static $DB;
 
     public static function conexionDB(){
-        avCategoriasModel::$DB = new DB();
+        ionaCategoriasModel::$DB = new DB();
     }
 
-    public static function avAll(){
-        avCategoriasModel::conexionDB();
+    public static function ionagetAll(){
+        ionaCategoriasModel::conexionDB();
         $sql = "Select * from categorias";
-        $data = avCategoriasModel::$DB->run($sql, []);
+        $data = ionaCategoriasModel::$DB->run($sql, []);
         return $data->fetchAll();
     }
 }

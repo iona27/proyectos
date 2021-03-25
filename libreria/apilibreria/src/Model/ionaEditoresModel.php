@@ -2,18 +2,18 @@
 namespace App\Model;
 use App\Config\DB;
 
-class avEditoresModel {
+class ionaEditoresModel {
     private static $table = 'editores';
     private static $DB;
 
     public static function conexionDB(){
-        avEditoresModel::$DB = new DB();
+        ionaEditoresModel::$DB = new DB();
     }
 
-    public static function avAll(){
-        avEditoresModel::conexionDB();
+    public static function ionagetAll(){
+        ionaEditoresModel::conexionDB();
         $sql = "Select * from editores";
-        $data = avEditoresModel::$DB->run($sql, []);
+        $data = ionaEditoresModel::$DB->run($sql, []);
         return $data->fetchAll();
     }
 }
