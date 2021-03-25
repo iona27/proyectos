@@ -7,7 +7,7 @@ class ionaDetallePedidosModel {
     private static $DB;
 
     public static function conexionDB(){
-        aionaDetallePedidosModel::$DB = new DB();
+        ionaDetallePedidosModel::$DB = new DB();
     }
 
     public static function ionagetAll(){
