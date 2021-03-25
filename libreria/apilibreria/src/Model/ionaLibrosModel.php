@@ -8,14 +8,17 @@ class ionaLibrosModel {
 
     public static function conexionDB(){
         ionaLibrosModel::$DB = new DB();
-    }/*
+    }
 
-    public static function avupdate($param){
-        avLibrosModel::conexionDB();
-        $sql = "UPDATE libros SET precio = precio+$param[1], stock = stock+$param[2] where categoriaid= '$param[0]'";
+    public static function ionaupdate($param){
+        ionaLibrosModel::conexionDB();
+        $sql = "UPDATE libros SET precio = precio+$param[1], 
+                stock = stock+$param[2] 
+                where categoriaid= '$param[0]'";
+        
         $data = avLibrosModel::$DB->run($sql, $param);
-        return "Libros cambiados correctamente ";
-    }*/
+        return "Libros actualizados correctamente ";
+    }
 
     public static function ionagetFilter($param){
         ionaLibrosModel::conexionDB();

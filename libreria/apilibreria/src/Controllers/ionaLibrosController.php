@@ -5,23 +5,24 @@
     
     use App\Model\ionaLibrosModel;    
 
-    class ionaLibrosController {/*
+    class ionaLibrosController {
 
-        public function avupdate(Request  $request, Response $response, $args){
+        public function ionaupdate(Request  $request, Response $response, $args){
             $parametros = $request->getQueryParams();
-           
-            $catid = $parametros['categoriaid'];
+            
+            $categoriaid = $parametros['categoriaid'];
             $precio = $parametros['precio'];
             $stock = $parametros['stock'];
 
-            $valores = array($catid, $precio, $stock);
-            $libros = avLibrosModel::avupdate($valores);
+            $valores = array($categoriaid, $precio, $stock);
+            
+            $libros = ionaLibrosModel::ionaupdate($valores);
             $librosJson = json_encode($libros);
             $response->getBody()->write($librosJson);
             return $response
                 ->withHeader('Content-Type', 'application/json')
                 ->withStatus(200);
-        }*/
+        }
 
         public function ionagetFilter(Request $request, Response $response, $args){
             $parametros = $request->getQueryParams();
