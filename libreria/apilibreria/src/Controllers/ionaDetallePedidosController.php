@@ -7,7 +7,7 @@
 
     class ionaDetallePedidosController {
         
-        public function iona getAll($request, $response, $args){
+        public function ionagetAll($request, $response, $args){
             $DetallePedidos = ionaDetallePedidosModel::ionagetAll();
             $DetallePedidosJson = json_encode($DetallePedidos);
             $response->getBody()->write($DetallePedidosJson);
