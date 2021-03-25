@@ -12,11 +12,10 @@ class ionaLibrosModel {
 
     public static function ionaupdate($param){
         ionaLibrosModel::conexionDB();
-        $sql = "UPDATE libros SET precio = precio+$param[1], 
-                stock = stock+$param[2] 
-                where categoriaid= '$param[0]'";
+        $sql = "UPDATE libros SET precio = precio+'$param[1]', stock = stock+'$param[2]' 
+                where categoriaid = '$param[0]'";
         
-        $data = avLibrosModel::$DB->run($sql, $param);
+        $data = ionaLibrosModel::$DB->run($sql, $param);
         return "Libros actualizados correctamente ";
     }
 
